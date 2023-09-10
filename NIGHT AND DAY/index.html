@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>modes</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(90, 70, 90);
+    }
+
+    .container {
+      height: 400px;
+      width: 350px;
+      /* display: flex; */
+      background-color: white;
+      margin: auto;
+      margin-top: 100px;
+      padding: 30px;
+      border-radius: 30px;
+    }
+
+    .main {
+      height: 100vh;
+    }
+
+    .lightbtn,
+    .darkbtn {
+      height: 30px;
+      border-radius: 10px;
+      width: 172px;
+      border: none;
+      color: black;
+      margin-top: 25px;
+    }
+
+    .image {
+      margin-top: 30px;
+      height: 300px;
+      width: 100%;
+    }
+
+    .img {
+      height: 300px;
+      width: 350px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="container">
+        <p>Choose a theme</p>
+        <div class="image">
+          <img src="" alt="" class="img" />
+        </div>
+        <div class="button">
+          <button class="lightbtn" onclick="lightMode()">Light</button>
+          <button class="darkbtn" onclick="darkMode()">Dark</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let lightBtn = document.querySelector(".lightbtn");
+    let main = document.querySelector(".container");
+    let change = document.querySelector(".change");
+    let darkBtn = document.querySelector(".darkbtn");
+    let image = document.querySelector(".img");
+
+    function lightMode() {
+      lightBtn.innerText = "Light";
+      main.style.background = "white";
+      main.style.color = "black";
+      lightBtn.style.background = "pink";
+      darkBtn.style.background = "";
+      image.src = "dancing-bear.gif";
+    }
+
+    function darkMode() {
+      darkBtn.innerText = "Dark";
+      main.style.background = "black";
+      main.style.color = "white";
+      lightBtn.style.background = "";
+      darkBtn.style.background = "pink";
+      image.src = "black.gif";
+    }
+
+    localStorage.setItem("mode", lightMode());
+  </script>
+</html>
