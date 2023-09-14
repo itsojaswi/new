@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .main {
+      background-color: white;
+      height: 100vh;
+    }
+
+    .container {
+      padding: 20px;
+      margin: auto;
+      height: 600px;
+      background-color: black;
+      width: 295px;
+      border-radius: 20px;
+      margin-top: 50px;
+    }
+
+    .input {
+      height: 200px;
+      width: 100%;
+      font-size: 30px;
+      color: black;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+    }
+
+    .calculation {
+      margin-top: 30px;
+    }
+
+    .tools {
+      height: 40px;
+    }
+
+    button {
+      height: 60px;
+      width: 60px;
+      padding: 20px;
+      margin: 5px;
+      border-radius: 50%;
+      outline: none;
+      border: none;
+      background-color: rgb(50, 44, 44);
+      color: white;
+    }
+
+    .equal {
+      background-color: rgb(204, 153, 204);
+      font-size: 15px;
+      color: white;
+    }
+
+    .divide,
+    .multiply,
+    .minus,
+    .plus,
+    .plusminus,
+    .dot,
+    .zero,
+    .percentage,
+    .C,
+    .bracket {
+      background-color: rgb(112, 85, 137);
+      color: white;
+      font-size: 15px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="container">
+        <input type="text" class="input" disabled />
+        <div class="calculation">
+          <button class="C" onclick="clearDisplay()"><h2>C</h2></button>
+          <button class="bracket" onclick="appendToInput('()')">
+            <h2>()</h2>
+          </button>
+          <button class="percentage" onclick="appendToInput('%')">
+            <h2>%</h2>
+          </button>
+          <button class="divide" onclick="appendToInput('/')">/</button>
+          <button class="seven" onclick="appendToInput('7')"><h2>7</h2></button>
+          <button class="eight" onclick="appendToInput('8')">
+            <h2>8</h2>
+          </button>
+          <button class="nine" onclick="appendToInput('9')"><h2>9</h2></button>
+          <button class="multiply" onclick="appendToInput('*')">*</button>
+          <button class="four" onclick="appendToInput('4')">
+            <h2>4</h2>
+          </button>
+          <button class="five" onclick="appendToInput('5')">
+            <h2>5</h2>
+          </button>
+          <button class="six" onclick="appendToInput('6')">
+            <h2>6</h2>
+          </button>
+          <button class="minus" onclick="appendToInput('-')">
+            <h2>-</h2>
+          </button>
+          <button class="one" onclick="appendToInput('1')">
+            <h2>1</h2>
+          </button>
+          <button class="two" onclick="appendToInput('2')">
+            <h2>2</h2>
+          </button>
+          <button class="three" onclick="appendToInput('3')">
+            <h2>3</h2>
+          </button>
+          <button class="plus" onclick="appendToInput('+')">
+            <h2>+</h2>
+          </button>
+          <button class="plusminus">
+            <h2>+/-</h2>
+          </button>
+          <button class="zero" onclick="appendToInput('0')">
+            <h2>0</h2>
+          </button>
+          <button class="dot" onclick="appendToInput('.')">
+            <h2>.</h2>
+          </button>
+          <button class="equal" onclick="calculate()">
+            <h2>=</h2>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function appendToInput(value) {
+        document.querySelector("input").value += value;
+      }
+
+      function clearDisplay() {
+        document.querySelector("input").value = " ";
+      }
+
+      function calculate() {
+        document.querySelector("input").value = eval(
+          document.querySelector("input").value
+        );
+        localStorage.setItem(
+          "number",
+          eval(document.querySelector("input").value)
+        );
+      }
+    </script>
+  </body>
+</html>
