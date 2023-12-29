@@ -1,0 +1,86 @@
+m* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 20px;
+  margin: 0;
+}
+
+.navBar {
+  position: absolute;
+  top: 10px;
+  right: 90px;
+}
+
+a {
+  text-decoration: none;
+  color: green;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.google {
+  font-size: 80px;
+  color: red;
+}
+
+.container,
+.advancedSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+  text-align: center;
+  padding: 20px;
+}
+
+.input {
+  width: 500px;
+  height: 20px;
+  padding: 15px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  box-shadow: 2px 2px 5px 2px rgb(175, 176, 176);
+}
+
+.searchBtn {
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  height: 30px;
+  width: 100px;
+  margin-top: 20px;
+}
+
+.advanced {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.advanced input {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.advanced input:focus,
+textarea:focus {
+  border: 1px solid #1670be;
+  box-shadow: 0 0 3px #1670be;
+  outline-offset: 0px;
+  outline: none;
+}
+
+.advancedgoogle {
+  margin-top: 100px;
+}
